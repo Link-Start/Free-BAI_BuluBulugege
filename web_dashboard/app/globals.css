@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap");
+@import "tailwindcss";
+
+/* ============================================================
+   NEO-BRUTALISM DESIGN SYSTEM — MeowAI Style
+   ============================================================ */
+
+:root {
+  /* Brand palette */
+  --cream: #fffef5;
+  --ink: #1a1423;
+  --orange: #ff6b35;
+  --blue: #004e98;
+  --green: #2d9b4e;
+  --yellow: #ffd23f;
+  --red: #e63946;
+
+  /* Semantic */
+  --bg: var(--cream);
+  --text: var(--ink);
+  --border: 2.5px solid var(--ink);
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-sm: 2px 2px 0 var(--ink);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Typography */
+  --font-display: "Sora", "Noto Sans SC", system-ui, sans-serif;
+  --font-body: "Sora", "Noto Sans SC", system-ui, sans-serif;
+
+  /* Radius — neo-brutalism uses sharp or very slight radius */
+  --radius: 2px;
+  --radius-lg: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   NEO-BRUTALISM CORE COMPONENTS
+   ============================================================ */
+
+/* Card — hard shadow, bold border */
+.nb-card {
+  background: var(--bg);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: var(--space-6);
+  border-radius: var(--radius);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.nb-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.nb-card-sm {
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.nb-card-sm:hover {
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+/* Button — sharp, bold */
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.nb-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.nb-btn-primary {
+  background: var(--orange);
+  color: var(--cream);
+}
+
+.nb-btn-primary:hover {
+  background: #ff5722;
+}
+
+.nb-btn-secondary {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.nb-btn-secondary:hover {
+  background: var(--yellow);
+}
+
+.nb-btn-danger {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.nb-btn-success {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.nb-btn-blue {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* Input — bold border, no shadow */
+.nb-input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  background: var(--bg);
+  border: var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.12s ease;
+}
+
+.nb-input:focus {
+  border-color: var(--orange);
+}
+
+/* Label */
+.nb-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+}
+
+/* Badge / Status pill */
+.nb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+}
+
+.nb-badge-active {
+  background: var(--green);
+  color: var(--cream);
+}
+
+.nb-badge-depleted {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.nb-badge-dead {
+  background: var(--red);
+  color: var(--cream);
+}
+
+.nb-badge-registering {
+  background: var(--blue);
+  color: var(--cream);
+}
+
+/* Divider */
+.nb-divider {
+  height: 2px;
+  background: var(--ink);
+  margin: var(--space-6) 0;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.page-padding {
+  padding: var(--space-8) var(--space-6);
+}
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.nb-table th {
+  text-align: left;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.nb-table td {
+  padding: var(--space-3);
+  border-bottom: 1px solid rgba(26, 20, 35, 0.15);
+  vertical-align: middle;
+}
+
+.nb-table tr:hover td {
+  background: rgba(255, 107, 53, 0.05);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+
+.loading-dot {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+.mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  font-feature-settings: "tnum";
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

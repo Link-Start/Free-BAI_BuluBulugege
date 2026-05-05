@@ -1,0 +1,60 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Account {
+  id            String        @id @default(cuid())
+  address       String        @unique
+  privateKey    String
+  sessionCookie String
+  apiKey        String        @unique @map("api_key")
+  credits       Int           @default(500000)
+  proxy         String?
+  status        AccountStatus @default(ACTIVE)
+  lastCheckAt   DateTime?     @map("last_check_at")
+  lastUsedAt    DateTime?     @map("last_used_at")
+  createdAt     DateTime      @default(now()) @map("created_at")
+  updatedAt     DateTime      @updatedAt @map("updated_at")
+
+  usageLogs     UsageLog[]
+
+  @@index([status, credits])
+  @@map("accounts")
+}
+
+model UsageLog {
+  id        String   @id @default(cuid())
+  accountId String   @map("account_id")
+  amount    Int
+  model     String
+  requestId String?  @map("request_id")
+  createdAt DateTime @default(now())
+
+  account   Account  @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([accountId])
+  @@map("usage_logs")
+}
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+enum AccountStatus {
+  ACTIVE
+  DEPLETED
+  DEAD
+  REGISTERING
+}

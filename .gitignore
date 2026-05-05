@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# API Keys and credentials
+all_keys*.json
+keys_*.json
+*.json.bak*
+batch_output.log
+
+# Site mirrors and extracted assets (large + copyright)
+web_reverse_chat_bankofai/extracted/
+web_reverse_chat_bankofai/chat.bankofai.io/
+web_reverse_chat_bankofai/accounts.google.com/
+web_reverse_chat_bankofai/registry.npmmirror.com/
+web_reverse_chat_bankofai/www.google-analytics.com/
+web_reverse_chat_bankofai/www.googletagmanager.com/
+
+# Database
+*.db
+*.db-journal
+prisma/migrations/
+
+# Build output
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Package lock (optional — remove this line if you want reproducible builds)
+# package-lock.json
