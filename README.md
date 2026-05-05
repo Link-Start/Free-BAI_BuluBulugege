@@ -391,6 +391,16 @@ Detailed analysis documents (in Chinese):
 
 ---
 
+## Community
+
+<a href="https://linux.do">
+  <img src="https://img.shields.io/badge/LinuxDo-Community-blue?style=for-the-badge&logo=discourse&logoColor=white" alt="LinuxDo" />
+</a>
+
+Discussion and updates on [LinuxDo](https://linux.do) — the Chinese-speaking tech community for developers, reverse engineers, and open-source enthusiasts.
+
+---
+
 ## Disclaimer
 
 This project is for **security research and educational purposes only**. It demonstrates vulnerabilities in client-side authentication patterns and insufficient anti-sybil mechanisms. The reverse engineering was performed on publicly accessible frontend JavaScript. Use responsibly and in compliance with applicable laws and platform terms.
